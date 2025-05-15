@@ -17,3 +17,19 @@ int binarySearch(int arr[], int size, int target) {
     }
     return -1; // Return -1 if the element is not found
 }
+
+int main() {
+    int arr[] = {2, 4, 6, 8, 10, 12, 14};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    int target = 10;
+
+    int result = binarySearch(arr, size, target);
+
+    if (result != -1) {
+        printf("Element %d found at index %d.\n", target, result);
+    } else {
+        printf("Element %d not found in the array.\n", target);
+    }
+
+    return 0;
+}

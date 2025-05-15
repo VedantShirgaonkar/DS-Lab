@@ -1,4 +1,4 @@
-#include<stdio.h>
+#include <stdio.h>
 
 void insertion_sort(int arr[], int length) {
     for (int i = 1; i < length; i++) {
@@ -13,4 +13,26 @@ void insertion_sort(int arr[], int length) {
         }
         arr[j + 1] = key;
     }
+}
+
+void print_array(int arr[], int length) {
+    for (int i = 0; i < length; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+}
+
+int main() {
+    int arr[] = {9, 5, 1, 4, 3};
+    int length = sizeof(arr) / sizeof(arr[0]);
+
+    printf("Original array: ");
+    print_array(arr, length);
+
+    insertion_sort(arr, length);
+
+    printf("Sorted array:   ");
+    print_array(arr, length);
+
+    return 0;
 }

@@ -3,13 +3,11 @@
 #define EMPTY -1
 
 int linearTable[SIZE];
-int quadraticTable[SIZE];
 
 // Initialize hash tables
 void initTables() {
     for (int i = 0; i < SIZE; i++) {
         linearTable[i] = EMPTY;
-        quadraticTable[i] = EMPTY;
     }
 }
 
@@ -30,22 +28,6 @@ void insertLinear(int key) {
     } else {
         printf("Linear Probing: Hash Table is full for key %d\n", key);
     }
-}
-
-// Quadratic Probing Insert
-void insertQuadratic(int key) {
-    int index = hash(key);
-    int i = 0;
-    int pos;
-    while (i < SIZE) {
-        pos = (index + i * i) % SIZE;
-        if (quadraticTable[pos] == EMPTY) {
-            quadraticTable[pos] = key;
-            return;
-        }
-        i++;
-    }
-    printf("Quadratic Probing: Hash Table is full for key %d\n", key);
 }
 
 // Display function
@@ -88,9 +70,9 @@ int main() {
                 printf("Linear Probing Table:\n");
                 display(linearTable);
                 break;
-            case 4:
-                printf("Quadratic Probing Table:\n");
-                display(quadraticTable);
+            // case 4:
+            //     printf("Quadratic Probing Table:\n");
+            //     display(quadraticTable);
                 break;
             case 5:
                 printf("Exiting...\n");
